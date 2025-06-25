@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ValveIQ - Smart Pipeline Sentinel</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Helvetica, sans-serif;
+      background: black;
+      color: #c3b1e1;
+      overflow-x: hidden;
+      height: 100%;
+      letter-spacing: 1.2px;
+    }
+
+    #bg-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      color: white;
+      margin-bottom: 10px;
+      letter-spacing: 3px;
+    }
+
+    header p {
+      font-size: 1.3rem;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+      gap: 40px;
+    }
+
+    .text-section {
+      flex: 1 1 400px;
+      max-width: 500px;
+    }
+
+    .text-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .text-section p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .btn-monitor {
+      margin-top: 25px;
+      padding: 12px 28px;
+      font-size: 1rem;
+      background-color: #5c6bc0;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      letter-spacing: 1.2px;
+    }
+
+    .btn-monitor:hover {
+      background-color: #3f51b5;
+      transform: scale(1.05);
+    }
+
+    .video-section {
+      flex: 1 1 400px;
+      max-width: 600px;
+    }
+
+    .video-section video {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .tile-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      padding: 80px 20px;
+    }
+
+    .tile {
+      flex: 1 1 400px;
+      max-width: 500px;
+      padding: 30px;
+      border-radius: 16px;
+      background-color: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(195, 177, 225, 0.3);
+      box-shadow: 0 0 20px rgba(195, 177, 225, 0.3);
+      transition: all 0.4s ease;
+      text-align: center;
+    }
+
+    .tile:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(195, 177, 225, 0.7);
+      background-color: rgba(255, 255, 255, 0.06);
+    }
+
+    .tile h3 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+      color: white;
+    }
+
+    .tile p {
+      font-size: 1.05rem;
+      color: #eeeeee;
+      line-height: 1.6;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.11/dist/vanta.topo.min.js"></script>
+</head>
+<body>
+
+  <div id="bg-canvas"></div>
+
+  <header>
+    <h1>Welcome to ValveIQ</h1>
+    <p>Smart Sentinel for Crude Oil Pipeline Monitoring</p>
+  </header>
+
+  <div class="container">
+    <div class="text-section">
+      <h2>Real-time Monitoring. Smarter Decisions.</h2>
+      <p>
+        ValveIQ uses cutting-edge analytics and sensor integration to monitor pipeline health based on pressure, vibration, corrosion, and more. Minimize risks, reduce costs, and boost operational efficiency.
+      </p>
+      <button class="btn-monitor" onclick="location.href='index.html'">Go to Monitor</button>
+    </div>
+
+    <div class="video-section">
+      <video autoplay muted loop>
+        <source src="static\WhatsApp Video 2025-04-16 at 11.19.33_e857119d.mp4" type="video/mp4" />
+        <!-- Fallback message if video is not supported -->
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    
+  </div>
+
+  <div class="tile-container">
+    <div class="tile">
+      <h3>About</h3>
+      <p>
+        ValveIQ is designed to be the brain behind pipeline health. Powered by machine learning and time-series forecasting, it detects early fault signatures using multivariate sensor data like pressure, flow rate, salinity, and corrosion level. It empowers field operators with intelligent alerts and data visualizations.
+      </p>
+    </div>
+    <div class="tile">
+      <h3>Future Scope</h3>
+      <p>
+        ValveIQ aims to evolve into a fully autonomous pipeline management platform. Future versions may include predictive dispatching for maintenance teams, integration with drone surveillance, and AI-driven resource optimization to extend pipeline lifespan and safety at scale.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    VANTA.TOPO({
+      el: "#bg-canvas",
+      color: 0xaaaaee,  // periwinkle color
+      backgroundColor: 0x000000, // black background
+      points: 10.0,  // number of points
+      maxDistance: 30.0,  // max distance between points
+      spacing: 30.0,  // space between lines
+      showDots: false,  // no dots in background
+      showLines: true,  // showing lines
+    });
+  </script>
+
+</body>
+</html>
